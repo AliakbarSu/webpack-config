@@ -1,3 +1,4 @@
+import './styles/index.css'
 const myObj = {
   name: 'ali'
 }
