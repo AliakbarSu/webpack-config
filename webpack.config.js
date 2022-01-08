@@ -4,12 +4,15 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const path = require('path')
 
 let mode = 'development'
+let target = 'web'
 if (process.env.NODE_ENV === 'production') {
   mode = 'production'
+  target = 'browserslist'
 }
 
 module.exports = {
   mode: mode,
+  target: target,
   devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
