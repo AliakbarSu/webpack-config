@@ -11,9 +11,16 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|jpe?g|sv|gif)$/i,
+        type: 'asset/resource'
+      },
+      {
         test: /\.s?css/i,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: { publicPath: '' }
+          },
           'css-loader',
           'postcss-loader',
           'sass-loader'
