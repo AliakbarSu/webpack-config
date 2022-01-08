@@ -8,11 +8,14 @@ if (process.env.NODE_ENV === 'production') {
 module.exports = {
   mode: mode,
   devtool: 'source-map',
+  output: {
+    assetModuleFilename: 'images/[hash][ext][query]'
+  },
   module: {
     rules: [
       {
         test: /\.(png|jpe?g|sv|gif)$/i,
-        type: 'asset/resource'
+        type: 'asset'
       },
       {
         test: /\.s?css/i,
